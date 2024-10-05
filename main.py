@@ -32,9 +32,18 @@ class linear_recurrence:
             print(f"{sequence[i]}," , end=' ')
         print("}")
             
-                
+print("Welcome to Recursolve!")
+print("Please choose the type of recursive relation problem do you have?")
+type = int(input("1-linear, 2- , 3- ,: "))
 
+if(type == 1):
+    print("a(n) = c1 * a(n-1) + c2)")
+    const1 = int(input("What is your first constant: "))
+    const2 = int(input("What is your second constant: "))
+    base_case = int(input("What is your base case: "))
+    
+    eq1 = linear_recurrence(const1, const2, base_case)
+    eq1.display_linear_recurrence()
 
-eq1 = linear_recurrence(2, 3, 2)
-eq1.display_linear_recurrence()
-eq1.solve_recurrence(5)
+    length = int(input("How long would you like the sequence to be?: "))
+    eq1.solve_recurrence(length)

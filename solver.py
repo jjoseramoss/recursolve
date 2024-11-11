@@ -1,5 +1,6 @@
 import numpy as np
 import streamlit as st
+import pandas as pd
 
 # Solves linear recurrence relations
     # Ex: a(n) = c1 * a(n-1) + c2
@@ -27,14 +28,25 @@ class linear_recurrence:
             sequence[i] = ans
 
         # prints sequence
-        st.write("The sequence is: " , end='')
-        st.write("{", end='')
-        for i in range(n):
-            if(i == n-1):
-                st.write(f"{sequence[i]}", end="}")
-                break
-            st.write(f"{sequence[i]}," , end=' ')
-        st.write("}")
+        df = pd.DataFrame(sequence, columns=['output'])
+        st.table(df)
+
+
+
+
+
+
+
+
+
+        # st.write("The sequence is: " , end='')
+        # st.write("{", end='')
+        # for i in range(n):
+        #     if(i == n-1):
+        #         st.write(f"{sequence[i]}", end="}")
+        #         break
+        #     st.write(f"{sequence[i]}," , end=' ')
+        # st.write("}")
             
             
 

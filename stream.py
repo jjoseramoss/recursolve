@@ -22,7 +22,13 @@ st.markdown(f"<div style='text-align: center'>Base Case: {c3}</div> ", unsafe_al
 #create equation
 eq1 = linear_recurrence(c1, c2, c3)
 
-if st.button("Solve", type="primary"):
-    st.write(eq1.solve_recurrence(20))
+col1, col2, col3 = st.columns(3)
+with col2:
+    st.markdown(f"<div style='text-align: center'>Number of instances:</div> ", unsafe_allow_html=True)
+    n = st.number_input("", 0,10000)
+    if st.button("Solve", type="primary"):
+        eq1.solve_recurrence(n)
 
+
+st.divider()
 

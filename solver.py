@@ -21,32 +21,18 @@ class linear_recurrence:
         for i in range( n):
             # inputs base case into sequence
             if(i == 0):
-                sequence[i] = self.base
+                sequence[i] = int(self.base)
                 continue
 
             ans = self.c1 * sequence[i-1] + self.c2
-            sequence[i] = ans
+            sequence[i] = int(ans)
 
+        for i in range(n):
+            print(sequence[i])
         # prints sequence
         df = pd.DataFrame(sequence, columns=['output'])
+        df['output'] = df['output'].astype(int)
         st.table(df)
-
-
-
-
-
-
-
-
-
-        # st.write("The sequence is: " , end='')
-        # st.write("{", end='')
-        # for i in range(n):
-        #     if(i == n-1):
-        #         st.write(f"{sequence[i]}", end="}")
-        #         break
-        #     st.write(f"{sequence[i]}," , end=' ')
-        # st.write("}")
             
             
 

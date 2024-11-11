@@ -1,7 +1,8 @@
 import numpy as np
+import streamlit as st
+
 # Solves linear recurrence relations
     # Ex: a(n) = c1 * a(n-1) + c2
-
 class linear_recurrence:
     # Constructor
     def __init__(self, c1, c2, base):
@@ -26,15 +27,14 @@ class linear_recurrence:
             sequence[i] = ans
 
         # prints sequence
-        print("The sequence is: " , end='')
-        print("{", end='')
+        st.write("The sequence is: " , end='')
+        st.write("{", end='')
         for i in range(n):
-            print(f"{sequence[i]}," , end=' ')
-        print("}")
+            if(i == n-1):
+                st.write(f"{sequence[i]}", end="}")
+                break
+            st.write(f"{sequence[i]}," , end=' ')
+        st.write("}")
             
-                
+            
 
-
-eq1 = linear_recurrence(2, 3, 2)
-eq1.display_linear_recurrence()
-eq1.solve_recurrence(5)
